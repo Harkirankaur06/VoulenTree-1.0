@@ -190,7 +190,23 @@ const openModalBtn = document.getElementById('openModalBtn');
       modal2.style.display = 'none';
     }
   });
+// Function to open Google Maps with a specific address
+function openMapWithAddress(address) {
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  window.open(mapUrl, '_blank');
+}
 
+// Add event listeners to all buttons with class 'location-btn'
+document.querySelectorAll('.location-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    const address = this.getAttribute('data-location');
+    if (address) {
+      openMapWithAddress(address);
+    } else {
+      alert("No location information available.");
+    }
+  });
+});
 // floating button for ngo's
 
 const openFormBtn5 = document.getElementById('openFormBtn5');

@@ -1299,7 +1299,7 @@ input#user-input {
 
 /* Modal Box Styling */
 .modal-box5 {
-    background-image: url('images/cccc.png');
+    background-image: url('../images/cccc.png');
     background-size: 600px 680px;
     background-repeat: no-repeat;
   background-color: #fff;

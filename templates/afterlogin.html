@@ -395,11 +395,11 @@
                 <div class="carousel-wrapper">
                     <button class="prev1" onclick="moveSlide1(-1)">&#10094;</button>
                     <div class="carousel">
-                        <img src="images/review1.jpg" alt="Image 1" class="imgslider">
-                        <img src="images/review2.jpg" alt="Image 2" class="imgslider">
-                        <img src="images/review3.jpg" alt="Image 3" class="imgslider">
-                        <img src="images/review4.jpg" alt="Image 4" class="imgslider">
-                        <img src="images/review5.jpg" alt="Image 5" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review1.jpg') }}" alt="Image 1" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review2.jpg') }}" alt="Image 2" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review3.jpg') }}" alt="Image 3" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review4.jpg') }}" alt="Image 4" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review5.jpg') }}images/review5.jpg" alt="Image 5" class="imgslider">
                     </div>
                     <button class="next1" onclick="moveSlide1(1)">&#10095;</button>
                 </div>

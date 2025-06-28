@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VolunTree</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/afterstyle.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <section id="homepage">
+        <nav class="navbar section-p">
+            <div class="logo">
+                <!-- <img src="/images/tree-solid.svg" alt="logo image" class="icon"> -->
+                <img src="{{ url_for('static', filename='images/tree-solid.svg') }}" alt="Example Image" style="height: 40px;">
+                <h1>VolunTree</h1>
+            </div>
+            <div class="texts">
+                <a href="#home-main">Home</a>
+                <a href="#opportunities-main">Opportunities</a>
+                <a href="#page3">Blogs</a>
+                <a href="#about-main">About Us</a>
+                <a href="#about-main">Contact Us</a>
+            </div>
+             <!-- <div class="profile" id="profile">
+                <button  onclick="profileopen()" style="margin-right: -500px;"> <i class="ri-user-3-fill"></i>  </button>
+               
+            </div> -->
+            <!-- <div id="login">
+                <button onclick="signout()" style="margin-right: -600px;" >Sign-out</button>
+            </div> -->
+            <div class="closeprofile" id="closeprofile">
+                <i class="ri-close-line" onclick="hidemenu()"></i>
+            </div>
+            <div class="profile" id="profile">
+                <button  onclick="profileopen()" > <i class="ri-user-3-fill"></i>  </button>
+               
+            </div>
+           
+        </nav>
+        <!-- Strip -->
+        <div id="strip">
+            <p>
+                <b>"VolunTree: Rooted in Service, United for Impact." 🌳💙</b>
+            </p>
+        </div>
+        <!-- Hero -->
+       <main class="hero section-p" id="home-main">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <h1 class="hero-title">Where Volunteers and NGOs Meet to Make a Difference.</h1>
+                    <div id="hero-btns">
+                        <a href="#opportunities-main"><button class="btn1">Search opportunity</button></a>
+                        <a href="{{ url_for('logout') }}"><button class="btn2">Sign-out</button></a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <!-- <div class="info-box">
+        <h2>Why Volunteer?</h2>
+        <p>Make a real impact, grow your skills, and build connections that matter.</p>
+      </div> -->
+                    <div class="chatbox">
+                        <h3>Hi, I'm Pooja, here to help you with all your queries!</h3>
+                        <div class="chat-window">
+                            <div class="messages" id="chat-messages">
+                                <!-- Messages will appear here -->
+                            </div>
+                            <input type="text" id="user-input" placeholder="Ask me anything..." />
+                            <button onclick="sendMessage()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+         <!-- Tagline -->
+         <div id="tagline">
+            <div style="margin-bottom: 30px; background-color: rgb(6, 6, 91);width: 100%;height: 120px; padding: 10px; justify-content: center;">
+                <div class="carousel-container1">
+                    <div class="carousel-wrapper1">
+                        <!-- <button class="prev2" onclick="moveSlide2(-1)">&#10094;</button> -->
+                        <div class="carousel1">
+                            <img src="{{ url_for('static', filename='images/ngologo1.png') }}" alt="Image 1" class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo1.png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo2 (1).png') }}" alt="Image 2" class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo2 (1).png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo3 (3).png') }}" alt="Image 3" class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo3 (3).png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo4 (4).png') }}" alt="Image 4"class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo4 (4).png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo5.png') }}" alt="Image 5"class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo5.png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo1.png') }}" alt="Image 1" class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo1.png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo2 (1).png') }}" alt="Image 2" class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo2 (1).png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo3 (3).png') }}" alt="Image 3" class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo3 (3).png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo4 (4).png') }}" alt="Image 4"class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo4 (4).png') }}" alt="Example Image" class="imgslider1"> -->
+                            <img src="{{ url_for('static', filename='images/ngologo5.png') }}" alt="Image 5"class="imgslider1">
+                            <!-- <img src="{{ url_for('static', filename='images/ngologo5.png') }}" alt="Example Image" class="imgslider1"> -->
+                        </div>
+                        <!-- <button class="next2" onclick="moveSlide2(1)">&#10095;</button> -->
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- search bar -->
+         <div style="height:150px;width:100%; " id="opportunities-main">
+        <div class="searchbar" style="   display: inline-block; height: 100px;width: 300px; margin-right: 800px;margin-left: 250px;margin-bottom: 50px;" >
+        <form style="width: 200px; float: left;">
+            <img class="searchbar-img" style="height: 50px;width: 50px;" src="{{ url_for('static', filename='images/location-icon-24.png') }}"><br> 
+            <select    name="location" id="location-search-bar" class="styled-select" placeholder="Enter your location"  style="width: 200px; margin-left: 20px; height: 40px;">
+    
+                <option disabled selected >Enter your location</option>
+                <!-- <option value="Hapur">Hapur</option> -->
+                <!-- <option value="jewar">Jewar</option> -->
+                <!-- <option value="jhajjar">Jhajjar</option> -->
+                <!-- <option value="karnal">Karnal</option> -->
+                <!-- <option value="manesar">Manesar</option> -->
+                <option value="modinagar">Modinagar</option>
+                <option value="deli">Faridabad</option>
+                <option value="deli">Ghaziabad</option>
+                <option value="delh" >Greater Noida</option>
+                <option value="de">Gurugram</option>
+                <option value="delh">New Delhi</option>
+                <option value="deli">Noida</option>
+                <!-- <option value="deli">Meerut</option> -->
+                
+            </select>
+        </form>
+</div>
+<div class="searchbar" style="height: 100px; display: inline-block; margin-bottom: 50px;margin-top: 13px; margin-left: -400px;">
+        <form style="width: 300px; float: right; height: 100px;">
+          <img class="searchbar-img" style="height: 50px;width: 50px;" src="{{ url_for('static', filename='images/speclogo.png') }}"><br>
+          
+                <select    name="location" id="location-search-bar" class="styled-select" placeholder="enter your location"  style="width: 200px; margin-left: 20px; height: 40px;">
+        
+                    <option disabled selected >Enter your Specialization</option>
+                    
+                    <option value="education">Education & Tutoring</option>
+                    <option value="healthcare">Healthcare & Medical Assistance</option>
+                    <option value="environment">Environmental Conservation</option>
+                    <option value="animal_welfare">Animal Welfare</option>
+                    <option value="community_service">Community Service & Outreach</option>
+                    <option value="disaster_relief">Disaster Relief & Emergency Response</option>
+                    <option value="elderly_care">Elderly Support & Care</option>
+                    <option value="child_welfare">Child Welfare & Mentoring</option>
+                    <!-- <option value="mental_health">Mental Health Support</option>
+                    <option value="technology">Technology & Digital Literacy</option>
+                    <option value="sports_coaching">Sports Coaching & Fitness</option>
+                    <option value="arts_culture">Arts, Culture & Heritage</option>
+                    <option value="fundraising">Fundraising & Grant Writing</option>
+                    <option value="disability_support">Disability Support & Inclusion</option>
+                    <option value="refugee_assistance">Refugee & Migrant Assistance</option>
+                    <option value="food_distribution">Food Distribution & Hunger Relief</option>
+                    <option value="legal_aid">Legal Aid & Advocacy</option>
+                    <option value="public_safety">Public Safety & Crisis Intervention</option> -->
+                </select>
+            </form>
+        </div>
+        </div>
+
+      <!-- Opportunities -->
+        <main class="opportunities section-p" >
+            <main class="oppo-container">
+                <div class="oppo-img">
+                    <img src="{{ url_for('static', filename='images/eventmanagement-img.jpg') }}">
+                    
+                
+                <h4 class="oppo-title">Work: Help Desk</h4>
+
+                <p class="oppo-content">Requirement 6 females, 2 at each location <br>
+                    Date:27th - 28th June<br>
+                    Locations:-Terminal 1, Terminal 2 IGI Airport, Delhi <br>
+                    
+                    Timings:-12hr shift <br>
+                    Payment:-1500<br>
+                    Food:-Provided<br> </p>
+                </div>
+                <div class="oppo-read-more">
+                    <button id="openModalBtn1">Get Details</button>
+                    <div class="modal-overlay1" id="customModal1">
+                    <div class="modal-box1">
+                        <main class="oppo-container2">
+                <div class="oppo-img2" style=" width: 489px;">
+                    <img src="{{ url_for('static', filename='images/eventmanagement-img.jpg') }}" alt="opportunities-img" class="oppo-cover" style="width: 560px;height: 100px;">
+                        <h4 class="oppo-title" style="width: 500px; font-size: 40px; margin-left: 45px;">Work: Help Desk</h4><br>
+                            <p class="oppo-content2" style="font-size: 20px; width: 400px; margin-left: -40px;  "><b>Requirement:-</b>6 females, 2 at each location <br>
+                                                   <b> Date:</b> 28th June<br>
+                                                   <b> Locations:-</b> To be disclosed soon! <br>
+                                                   <b>Timings:-</b>8hr shift <br>
+                                                   <b>Payment:-</b>>800<br>
+                                                   <b>Food:-</b> Provided<br> </p>
+                </div>
+                        <div class="modal-button-group">
+  <button id="okBtn1" class="modal-btn">Apply</button>
+  <button class="modal-btn">Location</button>
+  <button id="cancelBtn1" class="modal-btn">Cancel</button>
+</div>
+
+                    
+                    </div>
+                </div>
+                <!-- <img src="/images/arrow-right-solid.svg" alt="read more link" /> -->
+                <img src="{{ url_for('static', filename='images/arrow-right-solid.svg') }}" alt="Example Image">
+            </main>
+
+            <main class="oppo-container">
+                <div class="oppo-img">
+                    <img src="{{ url_for('static', filename='images/greenforest.jpg') }}"
+                    
+                    alt="opportunities-img" class="oppo-cover" />
+                
+                <h4 class="oppo-title">Work:-Plantation</h4>
+
+                <p class="oppo-content">Requirement 10 Persons <br>
+                    Date:29th - 30th June<br>
+                    Locations:- <br>
+                    
+                    Timings:- 4hrs <br>
+                    Payment:-700<br>
+                    Food:- No<br> </p>
+                </div>
+                <div class="oppo-read-more">
+                    <button id="openModalBtn2">Get Details</button>
+<div class="modal-overlay2" id="customModal2">
+  <div class="modal-box2">
+    <main class="oppo-container3">
+      <div class="oppo-img3" style="width: 489px;">
+        <img src="{{ url_for('static', filename='images/greenforest.jpg') }}" alt="opportunities-img" class="oppo-cover" style="width: 560px; height: 100px;">
+        <h4 class="oppo-title" style="width: 500px; font-size: 40px; margin-left: 45px;">Work:-Plantation</h4><br>
+        <p class="oppo-content3" style="font-size: 20px; width: 400px; margin-left: -40px;">
+          <b>Requirement:-</b>10 Persons <br>
+          <b>Date:</b>29th - 30th June<br>
+          <b>Locations:-</b>Will be shared later <br>
+          <b>Timings:-</b>4hrs <br>
+          <b>Payment:-</b>700<br>
+          <b>Food:-</b>No<br>
+        </p>
+      </div>
+      <div class="modal-button-group">
+  <button id="okBtn2" class="modal-btn">Apply</button>
+  <button class="modal-btn">Location</button>
+  <button id="cancelBtn2" class="modal-btn">Cancel</button>
+</div>
+
+    </main>
+  </div>
+</div>
+
+                    <!-- <button id="openModalBtn2">Get Details</button> -->
+                    <!-- <div class="modal-overlay2" id="customModal2">
+                    <div class="modal-box2">
+                        <main class="oppo-container3">
+                <div class="oppo-img3" style=" width: 489px;">
+                    <img src="images/greenforest.jpg" alt="opportunities-img" class="oppo-cover" style="width: 560px;height: 100px;">
+                        <h4 class="oppo-title" style="width: 500px; font-size: 40px; margin-left: 45px;">Work:-Cleaning</h4><br>
+                            <p class="oppo-content3" style="font-size: 20px; width: 400px; margin-left: -40px;  "><b>Requirement:-</b>6 females, 2 at each location <br>
+                                                   <b> Date:</b> 28th June<br>
+                                                   <b> Locations:-</b> To be disclosed soon! <br>
+                                                   <b>Timings:-</b>8hr shift <br>
+                                                   <b>Payment:-</b>>800<br>
+                                                   <b>Food:-</b> Provided<br> </p>
+                </div>
+                        <button id="okBtn2" style="display: inline-block;position: relative;">Apply</button>
+                        <button id="cancelBtn2" style="display: inline-block;position: relative;">Location</button>
+                        <button id="cancelBtn2"style="display: inline-block;position: relative;">cancel</button>
+                    </div> -->
+                    <!-- <img src="/images/arrow-right-solid.svg" alt="read more link" /> -->
+                    <img src="{{ url_for('static', filename='images/arrow-right-solid.svg') }}" alt="Example Image">
+                </div>
+            </main>
+
+            <main class="oppo-container">
+                <div class="oppo-img">
+                    <img src="{{ url_for('static', filename='images/wastemanagement-image.jpg') }}" alt="opportunities-img" class="oppo-cover" />
+                        <h4 class="oppo-title">Work:-Cleaning</h4>
+                            <p class="oppo-content">Requirement:-6 females, 2 at each location <br>
+                                                    Date: 28th June<br>
+                                                    Locations:- To be disclosed soon! <br>
+                                                    Timings:-8hr shift <br>
+                                                    Payment:-800<br>
+                                                    Food:- Provided<br> </p>
+                                                     </div>
+                <div class="oppo-read-more">
+                    <button id="openModalBtn">Get Details</button>
+                    <div class="modal-overlay" id="customModal">
+                    <div class="modal-box">
+                        <main class="oppo-container1">
+                <div class="oppo-img1" style=" width: 489px;">
+                    <img src="{{ url_for('static', filename='images/wastemanagement-image.jpg') }}" alt="opportunities-img" class="oppo-cover" style="width: 560px;height: 100px;">
+                        <h4 class="oppo-title" style="width: 500px; font-size: 40px; margin-left: 45px;">Work:-Cleaning</h4><br>
+                            <p class="oppo-content1" style="font-size: 20px; width: 400px; margin-left: -40px;  "><b>Requirement:-</b>6 females, 2 at each location <br>
+                                                   <b> Date:</b> 28th June<br>
+                                                   <b> Locations:-</b> To be disclosed soon! <br>
+                                                   <b>Timings:-</b>8hr shift <br>
+                                                   <b>Payment:-</b>>800<br>
+                                                   <b>Food:-</b> Provided<br> </p>
+                </div>
+                        <div class="modal-button-group">
+  <button id="okBtn" class="modal-btn">Apply</button>
+  <button class="modal-btn">Location</button>
+  <button id="cancelBtn" class="modal-btn">Cancel</button>
+</div>
+
+                    </div>
+                    </div>
+                    <!-- <img src="/images/arrow-right-solid.svg" alt="read more link" /> -->
+                    <img src="{{ url_for('static', filename='images/arrow-right-solid.svg') }}" alt="Example Image">
+                </div>
+            </main>
+        </main>
+        <!-- Slider -->
+        <main class="slider section-p">
+            <button class="slider-btn prev" onclick="moveSlide(-1)">
+                
+                <img src="{{ url_for('static', filename='images/less-than-solid.svg') }}" alt="slider-btn-img" class="icon" />
+            </button>
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-content">
+                        <h4>Health Care</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Education</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+
+                    </div>
+                    <div class="slider-content">
+                        <h4>Community</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Sports</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Arts & Culture</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Farming & Agriculture</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Charity</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Youth Work</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                    <div class="slider-content">
+                        <h4>Adult Companionships</h4>
+                        <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-img" class="icon" />
+                        <!-- <img src="{{ url_for('static', filename='images/hospital-user-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn next" onclick="moveSlide(1)">
+                <img src="{{ url_for('static', filename='images/greater-than-solid.svg') }}" alt="slider-btn-img" class="icon" />
+                <!-- <img src="{{ url_for('static', filename='images/greater-than-solid.svg') }}" alt="slider-btn-img" class="icon" /> -->
+            </button>
+        </main>
+
+
+        
+        <!-- blog -->
+        <div id="page3" class="section-p" >
+            <h2 id="page3heading">What our members have to say</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <button class="prev1" onclick="moveSlide1(-1)">&#10094;</button>
+                    <div class="carousel">
+                        <img src="{{ url_for('static', filename='images/review1.jpg') }}" alt="Image 1" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review2.jpg') }}" alt="Image 2" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review3.jpg') }}" alt="Image 3" class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review4.jpg') }}" alt="Image 4"class="imgslider">
+                        <img src="{{ url_for('static', filename='images/review5.jpg') }}" alt="Image 5"class="imgslider">
+                    </div>
+                    <button class="next1" onclick="moveSlide1(1)">&#10095;</button>
+                </div>
+            </div>
+        
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" class="section-p">
+            <main id="footer-container">
+                <div class="col">
+                    <h3 class="logo-title">VolunTree</h3>
+                </div>
+                <div class="col" id="about-main">
+                    <a class="title">About Us</a>
+                    <div class="footer-links">
+                        <a>Our Story</a>
+                        <a>Meet the Team: <br>Zaid Khan<br> Harsh Yadav <br> Harkiran Kaur <br> Deepak Yadav <br> Abhishek Verma
+                        </a>
+                        <a>Careers</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="title">Our Services</h4>
+                    <div class="footer-links">
+                        <a href="/services">What We Offer</a>
+                        <a href="/pricing">Pricing</a>
+                        <a href="/support">Customer Support</a>
+                    </div>
+                </div>
+                <div id="footer-social" class="col">
+                    <h4 class="title">Support</h4>
+                    <div class="footer-links">
+                        <a href="/faq">FAQs</a>
+                        <a href="/contact">Contact Us</a>
+                        <a href="/Number">+91 8439213771</a>
+                    </div>
+                </div>
+                <div class="col social">
+                    <a href="{{ url_for('logout') }}">
+                    <button class="footer-logIn">Sign-out</button>
+                    </a>
+                </div>
+            </main>
+
+            <section id="footer-bottom">
+                <div class="copyright">
+                    <small>© 2024 Your Company. All Rights Reserved.</small>
+                </div>
+                <div class="privacy">
+                    <a>Privacy Policy</a>
+                    <a>Terms of Service</a>
+                    <a>Cookies Policy</a>
+                </div>
+            </section>
+        </footer>
+
+    </section>
+    <!-- Profile Side Popup -->
+<div id="profile-popup" class="profile-popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+  <div class="profile-header">
+    <!-- <img src="images/user-avatar.png"  class="profile-pic"> -->
+      <div class="profile-pic-wrapper">
+    <img src="{{ url_for('static', filename='images/user-avatar.png') }}" alt="" id="profile-image" class="profile-pic">
+    <!-- <label for="upload-photo" class="edit-btn">✎</label>
+    <input type="file" id="upload-photo" accept="image/*" style="display: none;"> -->
+  </div>
+    <div class="user-info">
+      <h3>Zaid Pathan</h3>
+      <p>pathanzaid973@gmail.com</p>
+    </div>
+    <label for="upload-photo" class="edit-btn">✎</label>
+    <input type="file" id="upload-photo" accept="image/*" style="display: none;">
+    <!-- <button class="edit-btn">✎</button> -->
+  </div>
+    <div class="icon-row">
+    <div class="icon-box" > <img src="{{ url_for('static', filename='images/417-4176664_certificate-icon-professional-certificate-icon-removebg-preview.png') }}" alt=""> 
+        <p>Badges</p>
+        <span style="margin-top: 5px;" class="count">23</span>
+    </div>
+    <div class="icon-box"> <img src="{{ url_for('static', filename='images/work-icon-vector-isolated-white-background-logo-concept-work-sign-transparent-background-filled-black-symbol-work-icon-125783424-removebg-preview (1).png') }}" alt=""> 
+        <p>Events</p>
+        <span class="count" >13</span>
+    </div>
+    <div class="icon-box"> <img src="{{ url_for('static', filename='images/award-badge-icon-vector-21079690-removebg-preview.png') }}" alt="">
+         <p>Certificate</p>
+        <span class="count" >04</span>
+    </div>
+  </div>
+    <!-- info area -->
+  <form class="details-form">
+    
+    <label for="Gender">Gender:</label>
+  <input id="Gender" name="Gender" rows="2" placeholder="Enter your gender  (Male or Female only fuck lgbt don't try to enter)"></input>
+
+  <label for="Age">Age:</label>
+  <input id="Age" name="Age" rows="2" placeholder="Enter your age..."></input>
+
+  <!-- <label for="address">Address:</label>
+  <textarea id="address" name="address" rows="2" placeholder="Enter your address...">123 Volunteer Lane</textarea>
+
+  <label for="address">Address:</label>
+  <textarea id="address" name="address" rows="2" placeholder="Enter your address...">123 Volunteer Lane</textarea> -->
+
+  <label for="phone">Phone:</label>
+  <input type="text" id="phone" name="phone" placeholder="+91 9876XXXXXX" value="">
+
+  <label for="Occupation">Occupation:</label>
+  <input type="text" id="Occupation" name="Occupation" placeholder="e.g. Ug or Pg" value="">
+
+  <!-- <label for="joined">Joined:</label>
+  <input type="text" id="joined" name="joined" value="March 2024" readonly> -->
+
+  <button type="submit" class="save-btn">Save Changes</button>
+</form>
+  </div>
+</div>
+
+<!-- floating button for ngo's -->
+ <button id="openFormBtn5" class="floating-button5">Add &nbsp;Work&nbsp;+</button>
+    <div id="formModal5" class="modal-overlay5">
+  <div class="modal-box5">
+    <h2 style="margin-bottom: 10px; font-family: cursive; ">Opportunity Registration Form</h2>
+    <form id="contactForm5">
+      <input type="text" placeholder="Your Organization Name" required><br><br>
+      <input type="email" placeholder="Your Email" required><br><br>
+      <input type="text" placeholder="Site Location" required><br><br>
+      <input type="text" placeholder="Requirement " required><br><br>
+      <input type="text" placeholder="Work Duration " required><br><br>
+      <input type="text" placeholder="Stipend Provided - If Any" ><br><br>
+      <textarea placeholder="Custom Message(optional)" ></textarea><br><br>
+      <button type="submit" style="border: solid 2px black;margin-right: 20px; background-color: #000000; border-radius: 20px; width: 70px;height: 40px; color: antiquewhite;">Submit</button>
+      <button type="button" id="closeFormBtn5" style=" background-color: #000000; border-radius: 20px; width: 70px;height: 40px; color: antiquewhite;">Cancel</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script src="{{ url_for('static', filename='js/afterscript.js') }}"></script>
+</body>
+
+</html>

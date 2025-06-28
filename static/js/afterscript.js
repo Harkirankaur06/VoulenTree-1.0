@@ -265,3 +265,225 @@ document.getElementById("user-input").addEventListener("keydown", function(event
     sendMessage();          // Call your existing sendMessage function
   }
 });
+const openBtn = document.getElementById("openYearCalendarBtn");
+const modal6 = document.getElementById("yearCalendarModal");
+const closeBtn = document.getElementById("closeYearCalendarBtn");
+const grid = document.getElementById("calendarGrid");
+const title = document.getElementById("calendarMonthTitle");
+const prevBtn = document.getElementById("prevMonthBtn");
+const nextBtn = document.getElementById("nextMonthBtn");
+
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+openBtn.addEventListener("click", () => {
+  modal6.style.display = "block";
+  buildCalendar(currentYear, currentMonth);
+});
+
+closeBtn.addEventListener("click", () => {
+  modal6.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal6.style.display = "none";
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  currentMonth--;
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  }
+  buildCalendar(currentYear, currentMonth);
+});
+
+nextBtn.addEventListener("click", () => {
+  currentMonth++;
+  if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+  buildCalendar(currentYear, currentMonth);
+});
+
+function buildCalendar(year, month) {
+  grid.innerHTML = "";
+  title.textContent = `${monthNames[month]} ${year}`;
+
+  const days = ["S", "M", "T", "W", "T", "F", "S"];
+  days.forEach(day => {
+    const cell = document.createElement("div");
+    cell.textContent = day;
+    cell.className = "calendar-day-header";
+    grid.appendChild(cell);
+  });
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const totalDays = new Date(year, month + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    grid.appendChild(document.createElement("div"));
+  }
+
+  for (let d = 1; d <= totalDays; d++) {
+    const cell = document.createElement("div");
+    cell.textContent = d;
+    cell.className = "calendar-date-cell";
+    cell.addEventListener("click", () => {
+      alert(`You selected ${d} ${monthNames[month]} ${year}`);
+    });
+    grid.appendChild(cell);
+  }
+}
+/////////////////////////////////
+// --- Opportunity Modal Setup ---
+const openOrgBtn7 = document.getElementById("openOrgPanelBtn7");
+const closeOrgBtn7 = document.getElementById("closeOrgPanelBtn7");
+const orgModal7 = document.getElementById("orgPanelModal7");
+const orgContainer7 = document.getElementById("orgOpportunitiesContainer7");
+
+// Show modal
+openOrgBtn7.addEventListener("click", () => {
+  orgModal7.style.display = "block";
+  refreshOpportunities7(); // Load new opportunities every time it's opened
+});
+
+// Close modal
+closeOrgBtn7.addEventListener("click", () => {
+  orgModal7.style.display = "none";
+});
+
+// Click outside to close
+window.addEventListener("click", (e) => {
+  if (e.target === orgModal7) {
+    orgModal7.style.display = "none";
+  }
+});
+
+// Get random opportunities
+function getRandomOpportunities() {
+  const sampleData = [
+    {
+      org_name: "CleanEarth",
+      org_gmail: "contact@cleanearth.org",
+      org_location: "Mumbai, India",
+      org_requirement: "Beach Cleaning",
+      org_durationdays: 3,
+      org_durationtime: "Morning",
+      org_stipend: 300,
+      org_msg: "Join hands to clean Juhu beach."
+    },
+    {
+      org_name: "BrightFuture",
+      org_gmail: "hello@brightfuture.org",
+      org_location: "Bangalore, India",
+      org_requirement: "Child Education",
+      org_durationdays: 15,
+      org_durationtime: "Evening",
+      org_stipend: 1500,
+      org_msg: "Help kids learn basic skills."
+    },
+    {
+      org_name: "EcoGuardians",
+      org_gmail: "info@ecoguardians.org",
+      org_location: "Pune, India",
+      org_requirement: "Tree Plantation",
+      org_durationdays: 5,
+      org_durationtime: "Afternoon",
+      org_stipend: 200,
+      org_msg: "Support our city greening drive."
+    },
+    {
+      org_name: "FoodRelief",
+      org_gmail: "volunteer@foodrelief.org",
+      org_location: "Delhi, India",
+      org_requirement: "Meal Distribution",
+      org_durationdays: 2,
+      org_durationtime: "Anytime",
+      org_stipend: 0,
+      org_msg: "Distribute food to the needy."
+    }
+  ];
+
+  return sampleData.sort(() => 0.5 - Math.random()).slice(0, 2);
+}
+
+// Replace opportunity list
+function refreshOpportunities7() {
+  const newOpportunities = getRandomOpportunities();
+  orgContainer7.innerHTML = "";
+
+  newOpportunities.forEach(op => {
+    const card = document.createElement("div");
+    card.className = "org-card7";
+    card.innerHTML = `
+      <h3 class="org-card-title7">${op.org_name}</h3>
+      <p><strong>Email:</strong> ${op.org_gmail}</p>
+      <p><strong>Location:</strong> ${op.org_location}</p>
+      <p><strong>Requirement:</strong> ${op.org_requirement}</p>
+      <p><strong>Duration:</strong> ${op.org_durationdays} days (${op.org_durationtime})</p>
+      <p><strong>Stipend:</strong> ₹${op.org_stipend || 0}</p>
+      <p><strong>Message:</strong> ${op.org_msg || '—'}</p>
+    `;
+    orgContainer7.appendChild(card);
+  });
+}
+/////////////////////////////////////////////////
+const actionToggleBtn8 = document.getElementById("actionToggleBtn8");
+const actionMenu8 = document.getElementById("actionMenu8");
+
+let isMenuVisible8 = false;
+
+actionToggleBtn8.addEventListener("click", () => {
+  isMenuVisible8 = !isMenuVisible8;
+  actionMenu8.style.display = isMenuVisible8 ? "flex" : "none";
+});
+
+// Replace these with real modal or panel triggers
+document.getElementById("openOrgPanelBtn8").addEventListener("click", () => {
+ orgModal7.style.display = "block";
+  renderOpportunities7();
+});
+
+document.getElementById("openCalendarBtn8").addEventListener("click", () => {
+  modal6.style.display = "block";
+  buildCalendar(currentYear, currentMonth);
+});
+
+document.getElementById("openAddWorkBtn8").addEventListener("click", () => {
+  formModal5.style.display = 'block';
+});
+// 
+window.addEventListener("DOMContentLoaded", () => {
+  const calendarBtn = document.getElementById("openYearCalendarBtn");
+  const addWorkBtn = document.getElementById("openFormBtn5");
+  const showOpportunityBtn = document.getElementById("openOrgPanelBtn7");
+
+  if (calendarBtn) calendarBtn.style.display = "none";
+  if (addWorkBtn) addWorkBtn.style.display = "none";
+  if (showOpportunityBtn) showOpportunityBtn.style.display = "none";
+});
+
+// review edit option
+function openReviewModal() {
+  document.getElementById("reviewModal").style.display = "block";
+}
+
+function closeReviewModal() {
+  document.getElementById("reviewModal").style.display = "none";
+}
+
+document.getElementById("reviewForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Thank you for your review!");
+  closeReviewModal();
+  this.reset();
+});

@@ -532,6 +532,64 @@
   </div>
 </div>
 
+<!-- Bottom-left Calendar Button -->
+    <button id="openYearCalendarBtn" class="calendar-launch-btn">📅 Calendar</button>
+
+    <!-- Calendar Modal (Single Month View) -->
+    <div id="yearCalendarModal" class="calendar-modal-overlay">
+        <div class="calendar-modal-box">
+            <span id="closeYearCalendarBtn" class="calendar-close-btn">&times;</span>
+            <h2 id="calendarMonthTitle" class="calendar-title">📆 Month Year</h2>
+            <div class="calendar-nav">
+                <button id="prevMonthBtn" class="calendar-nav-btn">&lt;</button>
+                <button id="nextMonthBtn" class="calendar-nav-btn">&gt;</button>
+            </div>
+            <div id="calendarGrid" class="calendar-grid"></div>
+        </div>
+    </div>
+    <!-- Trigger Button -->
+    <button id="openOrgPanelBtn7" class="org-panel-btn7">📋 Show Opportunities</button>
+
+    <!-- Modal Popup -->
+    <div id="orgPanelModal7" class="org-modal-overlay7">
+        <div class="org-modal-box7">
+            <span id="closeOrgPanelBtn7" class="org-close-btn7">&times;</span>
+            <h2 class="org-title7" style="margin-bottom: 20px;">📌 Listed Opportunities</h2>
+
+
+            <div id="orgOpportunitiesContainer7" class="org-cards-container7"></div>
+            <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                <button onclick="refreshOpportunities7()"
+                    style="padding: 10px 20px; background-color: #0b5ed7; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    🔄 Refresh
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Action Button -->
+    <button id="actionToggleBtn8" class="action-toggle-btn8">☰</button>
+
+    <!-- Floating Menu Buttons -->
+    <div id="actionMenu8" class="action-menu8">
+        <button id="openOrgPanelBtn8" class="action-btn8">📋 Show Opportunities</button>
+        <button id="openCalendarBtn8" class="action-btn8">📅 Open Calendar</button>
+        <button id="openAddWorkBtn8" class="action-btn8">➕ Add Work</button>
+    </div>
+
+    
+    <!-- review edit for user -->
+    <div id="reviewModal" class="review-modal-overlay">
+        <div class="review-modal-box">
+            <h3>Write a Review</h3>
+            <form id="reviewForm">
+                <input type="text" placeholder="Your Name" required />
+                <textarea placeholder="Your Review" rows="5" required></textarea>
+                <button type="submit" class="submit-review-btn">Submit</button>
+                <button type="button" onclick="closeReviewModal()" class="cancel-review-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
 
 
 <script src="{{ url_for('static', filename='js/afterscript.js') }}"></script>

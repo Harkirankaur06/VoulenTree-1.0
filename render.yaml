@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: voulentree
-    runtime: python
-    buildCommand: ""
-    startCommand: python app.py
-    envVars:
-      - key: FLASK_ENV
-        value: production
